@@ -3,14 +3,14 @@
    HOJA DE ESTILOS - CREDENCIAL EDUCATIVA
    ==========================================================================
    Esta hoja de estilos controla la apariencia visual de la credencial.
-   Está organizada en secciones para facilitar su lectura y comprensión.
+   EstÃ¡ organizada en secciones para facilitar su lectura y comprensiÃ³n.
 */
 
 /* 
    --------------------------------------------------------------------------
    1. VARIABLES CSS (:root)
    --------------------------------------------------------------------------
-   Definimos variables para colores y tamaños que se usarán en todo el documento.
+   Definimos variables para colores y tamaÃ±os que se usarÃ¡n en todo el documento.
    Esto facilita cambiar el tema de color en un solo lugar.
 */
 :root {
@@ -33,7 +33,7 @@
 
 /* 
    --------------------------------------------------------------------------
-   2. CONFIGURACIÓN GENERAL DEL CUERPO (BODY)
+   2. CONFIGURACIÃ“N GENERAL DEL CUERPO (BODY)
    --------------------------------------------------------------------------
 */
 body {
@@ -50,7 +50,7 @@ body {
     align-items: center;
     /* Centra horizontalmente */
     font-family: 'Montserrat', sans-serif;
-    /* Tipografía principal */
+    /* TipografÃ­a principal */
     overflow: hidden;
     /* Evita barras de desplazamiento */
     perspective: 1200px;
@@ -70,14 +70,14 @@ body {
     transform-style: preserve-3d;
     /* Permite que los hijos giren en 3D */
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Suaviza la animación */
+    /* Suaviza la animaciÃ³n */
     cursor: pointer;
     /* Cambia el cursor a "mano" */
 }
 
 /* 
    Al pasar el mouse, rotamos la tarjeta 180 grados en el eje Y 
-   PERO SOLO SI NO ESTÁ EL MODO APRENDIZAJE ACTIVO 
+   PERO SOLO SI NO ESTÃ� EL MODO APRENDIZAJE ACTIVO 
 */
 body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     transform: rotateY(180deg);
@@ -107,17 +107,17 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     /* Recorta el contenido que sobresale */
     background: #ffffff;
     /* Fondo blanco */
-    /* Sombra suave para dar efecto de elevación */
+    /* Sombra suave para dar efecto de elevaciÃ³n */
     box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.1),
         0 0 0 1px rgba(0, 0, 0, 0.05) inset;
     color: var(--text-dark);
     -webkit-print-color-adjust: exact;
-    /* Asegura impresión de colores exactos */
+    /* Asegura impresiÃ³n de colores exactos */
     print-color-adjust: exact;
 }
 
-/* Estilos específicos para el dorso (la parte de atrás) */
+/* Estilos especÃ­ficos para el dorso (la parte de atrÃ¡s) */
 .dorso-tarjeta {
     transform: rotateY(180deg);
     /* Inicialmente rotada 180 grados */
@@ -132,17 +132,17 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
    --------------------------------------------------------------------------
 */
 
-/* Patrón de fondo sutil */
+/* PatrÃ³n de fondo sutil */
 .patron-fondo {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Patrón SVG codificado en base64 para no depender de archivos externos */
+    /* PatrÃ³n SVG codificado en base64 para no depender de archivos externos */
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     z-index: 0;
-    /* Detrás de todo */
+    /* DetrÃ¡s de todo */
 }
 
 /* Agujero para la cinta del cuello (Lanyard) */
@@ -173,13 +173,13 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     width: 60px;
     height: auto;
     animation: flotar 6s ease-in-out infinite;
-    /* Animación continua */
+    /* AnimaciÃ³n continua */
     z-index: 1;
     filter: grayscale(30%);
     /* Un poco desaturado */
 }
 
-/* Definición de la animación 'flotar' */
+/* DefiniciÃ³n de la animaciÃ³n 'flotar' */
 @keyframes flotar {
 
     0%,
@@ -205,7 +205,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     background: #ffffff;
     padding: 5px;
     border-radius: 50%;
-    /* Círculo perfecto */
+    /* CÃ­rculo perfecto */
     width: 45px;
     height: 45px;
     display: flex;
@@ -223,7 +223,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     border-radius: 50%;
 }
 
-/* Ajustes específicos para mejorar la visualización de ciertos logos */
+/* Ajustes especÃ­ficos para mejorar la visualizaciÃ³n de ciertos logos */
 .imagen-logo[src*="beltran.jpg"] {
     object-position: center;
     filter: contrast(1.1) brightness(1.05);
@@ -254,7 +254,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    /* Cubre todo el círculo, recorta si es necesario */
+    /* Cubre todo el cÃ­rculo, recorta si es necesario */
     border: 4px solid white;
     background-color: #eee;
 }
@@ -305,7 +305,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     z-index: 20;
 }
 
-/* Marco para los códigos QR */
+/* Marco para los cÃ³digos QR */
 .marco-qr {
     background: white;
     padding: 8px;
@@ -333,9 +333,9 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
 
 /* 
    --------------------------------------------------------------------------
-   8. ESTILOS DE IMPRESIÓN (@media print)
+   8. ESTILOS DE IMPRESIÃ“N (@media print)
    --------------------------------------------------------------------------
-   Estos estilos se aplican SOLO cuando se imprime la página (Ctrl+P).
+   Estos estilos se aplican SOLO cuando se imprime la pÃ¡gina (Ctrl+P).
 */
 @media print {
     body {
@@ -374,7 +374,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
         position: relative;
         /* Ya no absoluto */
         transform: none !important;
-        /* Quitamos rotación */
+        /* Quitamos rotaciÃ³n */
         width: var(--ancho-tarjeta);
         height: var(--alto-tarjeta);
         box-shadow: none;
@@ -385,7 +385,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
         /* Evitamos que se achiquen */
     }
 
-    /* Simplificamos sombras para impresión */
+    /* Simplificamos sombras para impresiÃ³n */
     .contenedor-foto-perfil,
     .insignia-rol,
     .contenedor-logo {
@@ -400,7 +400,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
    ==========================================================================
 */
 
-/* Botón flotante */
+/* BotÃ³n flotante */
 .boton-aprendizaje {
     position: fixed;
     top: 20px;
@@ -424,7 +424,7 @@ body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
     color: white;
 }
 
-/* Botón para girar (solo visible en modo aprendizaje) */
+/* BotÃ³n para girar (solo visible en modo aprendizaje) */
 .boton-girar {
     position: fixed;
     bottom: 20px;
@@ -497,14 +497,14 @@ body.modo-aprendizaje-activo .boton-girar {
     }
 }
 
-/* Mostrar puntos cuando el modo está activo */
+/* Mostrar puntos cuando el modo estÃ¡ activo */
 body.modo-aprendizaje-activo .punto-interactivo {
     opacity: 1;
     transform: scale(1);
 }
 
 /* 
-   PANEL LATERAL DE INFORMACIÓN
+   PANEL LATERAL DE INFORMACIÃ“N
    --------------------------------------------------------------------------
    Este panel reemplaza a los tooltips flotantes.
    Aparece a la derecha de la pantalla.
@@ -533,7 +533,7 @@ body.modo-aprendizaje-activo .punto-interactivo {
     opacity: 1;
 }
 
-/* Título del panel */
+/* TÃ­tulo del panel */
 .panel-titulo {
     color: var(--primary);
     font-weight: 900;
@@ -544,7 +544,7 @@ body.modo-aprendizaje-activo .punto-interactivo {
     padding-bottom: 5px;
 }
 
-/* Descripción */
+/* DescripciÃ³n */
 .panel-descripcion {
     color: #555;
     font-size: 0.9rem;
@@ -553,7 +553,202 @@ body.modo-aprendizaje-activo .punto-interactivo {
     display: block;
 }
 
-/* Bloque de código */
+/* Bloque de cÃ³digo */
+.panel-codigo {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8rem;
+    display: block;
+    overflow-x: auto;
+    border-left: 4px solid var(--primary);
+    .cara-tarjeta,
+    .dorso-tarjeta {
+        position: relative;
+        /* Ya no absoluto */
+        transform: none !important;
+        /* Quitamos rotaciÃ³n */
+        width: var(--ancho-tarjeta);
+        height: var(--alto-tarjeta);
+        box-shadow: none;
+        border: 1px solid #ccc;
+        /* Borde simple para recortar */
+        backface-visibility: visible;
+        flex-shrink: 0;
+        /* Evitamos que se achiquen */
+    }
+
+    /* Simplificamos sombras para impresiÃ³n */
+    .contenedor-foto-perfil,
+    .insignia-rol,
+    .contenedor-logo {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* 
+   ==========================================================================
+   9. MODO APRENDIZAJE (Estilos Interactivos)
+   ==========================================================================
+*/
+
+/* BotÃ³n flotante */
+.boton-aprendizaje {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.boton-aprendizaje:hover,
+.boton-aprendizaje.activo {
+    background: var(--primary);
+    color: white;
+}
+
+/* BotÃ³n para girar (solo visible en modo aprendizaje) */
+.boton-girar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.boton-girar:hover {
+    background: black;
+    transform: scale(1.05);
+}
+
+body.modo-aprendizaje-activo .boton-girar {
+    display: block;
+    /* Visible en modo aprendizaje */
+}
+
+/* 
+   HOTSPOTS (Puntos Interactivos)
+   --------------------------------------------------------------------------
+*/
+.punto-interactivo {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.3);
+    animation: pulso 2s infinite;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Icono dentro del punto */
+.punto-interactivo i {
+    pointer-events: none;
+}
+
+@keyframes pulso {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 140, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
+    }
+}
+
+/* Mostrar puntos cuando el modo estÃ¡ activo */
+body.modo-aprendizaje-activo .punto-interactivo {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 
+   PANEL LATERAL DE INFORMACIÃ“N
+   --------------------------------------------------------------------------
+   Este panel reemplaza a los tooltips flotantes.
+   Aparece a la derecha de la pantalla.
+*/
+.panel-lateral {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%) translateX(120%);
+    /* Oculto a la derecha */
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 900;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+/* Mostrar panel cuando tiene la clase activa */
+.panel-lateral.visible {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+}
+
+/* TÃ­tulo del panel */
+.panel-titulo {
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+/* DescripciÃ³n */
+.panel-descripcion {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Bloque de cÃ³digo */
 .panel-codigo {
     background: #1e1e1e;
     color: #d4d4d4;
@@ -571,3 +766,94 @@ body.modo-aprendizaje-activo .punto-interactivo {
 body.modo-aprendizaje-activo .contenedor-tarjeta {
     box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
 }
+
+/* 
+   ==========================================================================
+   10. EDITOR EN VIVO (Personalización)
+   ==========================================================================
+*/
+
+/* Botón del Editor (Izquierda) */
+.boton-editor {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: white;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.boton-editor:hover,
+.boton-editor.activo {
+    background: #333;
+    color: white;
+}
+
+/* Panel del Editor (Izquierda) */
+.panel-editor {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%) translateX(-120%); /* Oculto a la izquierda */
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 
+        0 20px 50px rgba(0,0,0,0.1),
+        0 0 0 1px rgba(0,0,0,0.05);
+    z-index: 900;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+.panel-editor.visible {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+}
+
+/* Estilos del Formulario */
+.grupo-input {
+    margin-bottom: 15px;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Ocultar en impresión */
+@media print {
+    .boton-editor,
+    .panel-editor {
+        display: none !important;
+    }
+}
+
