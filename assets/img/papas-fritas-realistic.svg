@@ -1,0 +1,41 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="friesContainerGrad">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="friesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Fries container -->
+  <path d="M 100 220 L 120 140 L 280 140 L 300 220 Z" fill="url(#friesContainerGrad)" filter="url(#shadow)" />
+  <rect x="110" y="150" width="180" height="60" fill="#A0522D" />
+  
+  <!-- Individual fries with realistic texture -->
+  <rect x="130" y="100" width="15" height="50" rx="3" fill="url(#friesGrad)" transform="rotate(-8 137 125)" filter="url(#shadow)" />
+  <rect x="150" y="95" width="15" height="55" rx="3" fill="url(#friesGrad)" transform="rotate(5 157 122)" filter="url(#shadow)" />
+  <rect x="170" y="90" width="15" height="60" rx="3" fill="url(#friesGrad)" transform="rotate(-3 177 120)" filter="url(#shadow)" />
+  <rect x="190" y="92" width="15" height="58" rx="3" fill="url(#friesGrad)" transform="rotate(6 197 121)" filter="url(#shadow)" />
+  <rect x="210" y="98" width="15" height="52" rx="3" fill="url(#friesGrad)" transform="rotate(-4 217 124)" filter="url(#shadow)" />
+  <rect x="230" y="102" width="15" height="48" rx="3" fill="url(#friesGrad)" transform="rotate(3 237 126)" filter="url(#shadow)" />
+  <rect x="250" y="108" width="15" height="42" rx="3" fill="url(#friesGrad)" transform="rotate(-2 257 129)" filter="url(#shadow)" />
+  
+  <!-- Salt and texture -->
+  <circle cx="140" cy="115" r="1.5" fill="white" opacity="0.8" />
+  <circle cx="160" cy="110" r="1" fill="white" opacity="0.7" />
+  <circle cx="180" cy="105" r="1.2" fill="white" opacity="0.6" />
+  <circle cx="200" cy="107" r="0.8" fill="white" opacity="0.8" />
+  <circle cx="220" cy="112" r="1" fill="white" opacity="0.7" />
+  <circle cx="240" cy="118" r="0.7" fill="white" opacity="0.9" />
+  
+  <!-- Realistic highlights on fries -->
+  <ellipse cx="145" cy="120" rx="3" ry="8" fill="white" opacity="0.3" />
+  <ellipse cx="185" cy="115" rx="2" ry="10" fill="white" opacity="0.25" />
+  <ellipse cx="225" cy="125" rx="2.5" ry="6" fill="white" opacity="0.2" />
+</svg>

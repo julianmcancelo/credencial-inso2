@@ -1,0 +1,51 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="crustGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cheeseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="pepperoniGrad">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC143C;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Pizza base -->
+  <circle cx="100" cy="100" r="80" fill="url(#crustGrad)" />
+  <circle cx="100" cy="100" r="75" fill="#F5DEB3" />
+  
+  <!-- Sauce -->
+  <circle cx="100" cy="100" r="70" fill="#8B0000" opacity="0.7" />
+  
+  <!-- Cheese -->
+  <circle cx="100" cy="100" r="65" fill="url(#cheeseGrad)" opacity="0.9" />
+  
+  <!-- Pepperoni slices -->
+  <ellipse cx="80" cy="85" rx="12" ry="10" fill="url(#pepperoniGrad)" />
+  <ellipse cx="120" cy="90" rx="10" ry="8" fill="url(#pepperoniGrad)" />
+  <ellipse cx="100" cy="110" rx="11" ry="9" fill="url(#pepperoniGrad)" />
+  <ellipse cx="70" cy="110" rx="9" ry="7" fill="url(#pepperoniGrad)" />
+  <ellipse cx="130" cy="115" rx="10" ry="8" fill="url(#pepperoniGrad)" />
+  <ellipse cx="90" cy="130" rx="8" ry="6" fill="url(#pepperoniGrad)" />
+  <ellipse cx="115" cy="125" rx="9" ry="7" fill="url(#pepperoniGrad)" />
+  
+  <!-- Mushroom pieces -->
+  <ellipse cx="85" cy="105" rx="6" ry="4" fill="#F5DEB3" opacity="0.8" />
+  <ellipse cx="110" cy="75" rx="5" ry="3" fill="#F5DEB3" opacity="0.8" />
+  <ellipse cx="125" cy="100" rx="6" ry="4" fill="#F5DEB3" opacity="0.8" />
+  
+  <!-- Olive slices -->
+  <circle cx="95" cy="95" r="4" fill="#2F4F2F" />
+  <circle cx="95" cy="95" r="2" fill="#1C1C1C" />
+  <circle cx="105" cy="105" r="3.5" fill="#2F4F2F" />
+  <circle cx="105" cy="105" r="1.8" fill="#1C1C1C" />
+  
+  <!-- Cheese drips -->
+  <path d="M 75 95 Q 73 100 75 105" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.8" />
+  <path d="M 125 105 Q 127 110 125 115" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.8" />
+  <path d="M 100 125 Q 98 130 100 135" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.8" />
+</svg>

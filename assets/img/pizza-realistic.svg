@@ -1,0 +1,71 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="pizzaCrustGrad">
+      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="cheeseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="pepperoniGrad">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC143C;stop-opacity:1" />
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Pizza shadow -->
+  <ellipse cx="205" cy="355" rx="140" ry="40" fill="black" opacity="0.3" />
+  
+  <!-- Pizza base with realistic crust -->
+  <circle cx="200" cy="200" r="150" fill="url(#pizzaCrustGrad)" filter="url(#shadow)" />
+  <circle cx="200" cy="200" r="140" fill="#F5DEB3" />
+  
+  <!-- Sauce layer -->
+  <circle cx="200" cy="200" r="130" fill="#8B0000" opacity="0.8" />
+  
+  <!-- Cheese with realistic melting -->
+  <circle cx="200" cy="200" r="125" fill="url(#cheeseGrad)" opacity="0.95" />
+  
+  <!-- Pepperoni with realistic texture -->
+  <ellipse cx="150" cy="160" rx="25" ry="20" fill="url(#pepperoniGrad)" filter="url(#shadow)" />
+  <ellipse cx="150" cy="158" rx="20" ry="15" fill="#CD5C5C" />
+  <ellipse cx="250" cy="170" rx="22" ry="18" fill="url(#pepperoniGrad)" filter="url(#shadow)" />
+  <ellipse cx="250" cy="168" rx="18" ry="14" fill="#CD5C5C" />
+  <ellipse cx="200" cy="220" rx="24" ry="19" fill="url(#pepperoniGrad)" filter="url(#shadow)" />
+  <ellipse cx="200" cy="218" rx="19" ry="15" fill="#CD5C5C" />
+  <ellipse cx="130" cy="210" rx="20" ry="16" fill="url(#pepperoniGrad)" filter="url(#shadow)" />
+  <ellipse cx="130" cy="208" rx="16" ry="12" fill="#CD5C5C" />
+  <ellipse cx="270" cy="230" rx="22" ry="17" fill="url(#pepperoniGrad)" filter="url(#shadow)" />
+  <ellipse cx="270" cy="228" rx="18" ry="13" fill="#CD5C5C" />
+  
+  <!-- Mushroom pieces -->
+  <ellipse cx="170" cy="195" rx="12" ry="8" fill="#F5DEB3" opacity="0.9" filter="url(#shadow)" />
+  <ellipse cx="170" cy="193" rx="8" ry="5" fill="#FAEBD7" />
+  <ellipse cx="230" cy="165" rx="10" ry="6" fill="#F5DEB3" opacity="0.9" filter="url(#shadow)" />
+  <ellipse cx="230" cy="163" rx="6" ry="4" fill="#FAEBD7" />
+  <ellipse cx="260" cy="200" rx="11" ry="7" fill="#F5DEB3" opacity="0.9" filter="url(#shadow)" />
+  <ellipse cx="260" cy="198" rx="7" ry="4" fill="#FAEBD7" />
+  
+  <!-- Olive slices -->
+  <circle cx="180" cy="180" r="8" fill="#2F4F2F" filter="url(#shadow)" />
+  <circle cx="180" cy="180" r="4" fill="#1C1C1C" />
+  <circle cx="220" cy="190" r="7" fill="#2F4F2F" filter="url(#shadow)" />
+  <circle cx="220" cy="190" r="3.5" fill="#1C1C1C" />
+  <circle cx="160" cy="240" r="6" fill="#2F4F2F" filter="url(#shadow)" />
+  <circle cx="160" cy="240" r="3" fill="#1C1C1C" />
+  
+  <!-- Realistic cheese drips -->
+  <path d="M 145 175 Q 143 185 145 195" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.8" filter="url(#shadow)" />
+  <path d="M 255 195 Q 257 205 255 215" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.8" filter="url(#shadow)" />
+  <path d="M 200 235 Q 198 245 200 255" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.8" filter="url(#shadow)" />
+  <path d="M 170 215 Q 168 225 170 235" stroke="#FFD700" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#shadow)" />
+  
+  <!-- Cheese highlights -->
+  <ellipse cx="190" cy="170" rx="20" ry="10" fill="white" opacity="0.2" />
+  <ellipse cx="240" cy="210" rx="15" ry="8" fill="white" opacity="0.15" />
+  <ellipse cx="150" cy="230" rx="12" ry="6" fill="white" opacity="0.18" />
+</svg>

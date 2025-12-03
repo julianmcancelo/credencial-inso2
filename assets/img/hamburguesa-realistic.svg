@@ -1,0 +1,48 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="plateGrad">
+      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Plate -->
+  <ellipse cx="200" cy="200" rx="150" ry="80" fill="url(#plateGrad)" filter="url(#shadow)" />
+  <ellipse cx="200" cy="195" rx="140" ry="75" fill="white" opacity="0.8" />
+  
+  <!-- Burger base realistic -->
+  <ellipse cx="200" cy="180" rx="100" ry="40" fill="#8B4513" filter="url(#shadow)" />
+  <ellipse cx="200" cy="175" rx="95" ry="35" fill="#A0522D" />
+  
+  <!-- Meat patty -->
+  <ellipse cx="200" cy="160" rx="90" ry="25" fill="#8B0000" filter="url(#shadow)" />
+  <ellipse cx="200" cy="158" rx="85" ry="22" fill="#CD5C5C" />
+  
+  <!-- Cheese melting -->
+  <path d="M 120 150 Q 200 140 280 150 L 275 155 Q 200 145 125 155 Z" fill="#FFD700" opacity="0.9" filter="url(#shadow)" />
+  
+  <!-- Lettuce -->
+  <path d="M 125 140 Q 200 130 275 140 Q 270 145 200 135 Q 130 145 125 140" fill="#90EE90" opacity="0.8" filter="url(#shadow)" />
+  
+  <!-- Tomato -->
+  <ellipse cx="200" cy="125" rx="85" ry="15" fill="#FF6347" filter="url(#shadow)" />
+  <ellipse cx="200" cy="123" rx="80" ry="13" fill="#FF8C69" />
+  
+  <!-- Top bun -->
+  <ellipse cx="200" cy="110" rx="100" ry="35" fill="#8B4513" filter="url(#shadow)" />
+  <ellipse cx="200" cy="105" rx="95" ry="30" fill="#A0522D" />
+  
+  <!-- Sesame seeds -->
+  <ellipse cx="180" cy="85" rx="4" ry="2" fill="#F5DEB3" transform="rotate(15 180 85)" />
+  <ellipse cx="220" cy="90" rx="3" ry="1.5" fill="#F5DEB3" transform="rotate(-20 220 90)" />
+  <ellipse cx="200" cy="83" rx="3.5" ry="2" fill="#F5DEB3" transform="rotate(30 200 83)" />
+  <ellipse cx="190" cy="92" rx="3" ry="1.5" fill="#F5DEB3" />
+  <ellipse cx="210" cy="88" rx="2.5" ry="1.2" fill="#F5DEB3" />
+  
+  <!-- Realistic highlights -->
+  <ellipse cx="170" cy="100" rx="15" ry="8" fill="white" opacity="0.2" />
+  <ellipse cx="230" cy="105" rx="12" ry="6" fill="white" opacity="0.15" />
+</svg>

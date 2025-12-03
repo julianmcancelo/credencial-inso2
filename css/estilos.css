@@ -1,0 +1,573 @@
+/* 
+   ==========================================================================
+   HOJA DE ESTILOS - CREDENCIAL EDUCATIVA
+   ==========================================================================
+   Esta hoja de estilos controla la apariencia visual de la credencial.
+   Está organizada en secciones para facilitar su lectura y comprensión.
+*/
+
+/* 
+   --------------------------------------------------------------------------
+   1. VARIABLES CSS (:root)
+   --------------------------------------------------------------------------
+   Definimos variables para colores y tamaños que se usarán en todo el documento.
+   Esto facilita cambiar el tema de color en un solo lugar.
+*/
+:root {
+    /* Colores Principales */
+    --primary: #ff8c00;
+    /* Naranja principal */
+    --primary-dark: #e65100;
+    /* Naranja oscuro para sombras/gradientes */
+    --accent: #bf360c;
+    /* Color de acento */
+    --text-dark: #333333;
+    /* Color de texto oscuro */
+
+    /* Dimensiones de la Tarjeta */
+    --ancho-tarjeta: 320px;
+    /* Ancho fijo de la tarjeta */
+    --alto-tarjeta: 520px;
+    /* Alto fijo de la tarjeta */
+}
+
+/* 
+   --------------------------------------------------------------------------
+   2. CONFIGURACIÓN GENERAL DEL CUERPO (BODY)
+   --------------------------------------------------------------------------
+*/
+body {
+    background-color: #f0f2f5;
+    /* Color de fondo gris claro */
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la ventana */
+    display: flex;
+    /* Usa Flexbox para alinear contenido */
+    flex-direction: column;
+    /* Organiza elementos en columna */
+    justify-content: center;
+    /* Centra verticalmente */
+    align-items: center;
+    /* Centra horizontalmente */
+    font-family: 'Montserrat', sans-serif;
+    /* Tipografía principal */
+    overflow: hidden;
+    /* Evita barras de desplazamiento */
+    perspective: 1200px;
+    /* Da profundidad 3D a la escena */
+}
+
+/* 
+   --------------------------------------------------------------------------
+   3. CONTENEDOR DE LA TARJETA (EFECTO 3D)
+   --------------------------------------------------------------------------
+*/
+.contenedor-tarjeta {
+    width: var(--ancho-tarjeta);
+    height: var(--alto-tarjeta);
+    position: relative;
+    /* Necesario para posicionar hijos absolutos */
+    transform-style: preserve-3d;
+    /* Permite que los hijos giren en 3D */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Suaviza la animación */
+    cursor: pointer;
+    /* Cambia el cursor a "mano" */
+}
+
+/* 
+   Al pasar el mouse, rotamos la tarjeta 180 grados en el eje Y 
+   PERO SOLO SI NO ESTÁ EL MODO APRENDIZAJE ACTIVO 
+*/
+body:not(.modo-aprendizaje-activo) .contenedor-tarjeta:hover {
+    transform: rotateY(180deg);
+}
+
+/* Clase para girar manualmente (usada en modo aprendizaje) */
+.contenedor-tarjeta.girada {
+    transform: rotateY(180deg);
+}
+
+/* 
+   --------------------------------------------------------------------------
+   4. CARAS DE LA TARJETA (FRENTE Y DORSO)
+   --------------------------------------------------------------------------
+*/
+.cara-tarjeta,
+.dorso-tarjeta {
+    position: absolute;
+    /* Se superponen una sobre otra */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* Oculta la cara trasera cuando se gira */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Recorta el contenido que sobresale */
+    background: #ffffff;
+    /* Fondo blanco */
+    /* Sombra suave para dar efecto de elevación */
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05) inset;
+    color: var(--text-dark);
+    -webkit-print-color-adjust: exact;
+    /* Asegura impresión de colores exactos */
+    print-color-adjust: exact;
+}
+
+/* Estilos específicos para el dorso (la parte de atrás) */
+.dorso-tarjeta {
+    transform: rotateY(180deg);
+    /* Inicialmente rotada 180 grados */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+   --------------------------------------------------------------------------
+   5. DECORACIONES Y DETALLES
+   --------------------------------------------------------------------------
+*/
+
+/* Patrón de fondo sutil */
+.patron-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Patrón SVG codificado en base64 para no depender de archivos externos */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: 0;
+    /* Detrás de todo */
+}
+
+/* Agujero para la cinta del cuello (Lanyard) */
+.agujero-cinta {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centrado perfecto */
+    width: 40px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    z-index: 50;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra interna para profundidad */
+}
+
+/* 
+   --------------------------------------------------------------------------
+   6. ANIMACIONES (ELEMENTOS FLOTANTES)
+   --------------------------------------------------------------------------
+*/
+.imagen-flotante {
+    position: absolute;
+    opacity: 0.15;
+    /* Muy transparente */
+    width: 60px;
+    height: auto;
+    animation: flotar 6s ease-in-out infinite;
+    /* Animación continua */
+    z-index: 1;
+    filter: grayscale(30%);
+    /* Un poco desaturado */
+}
+
+/* Definición de la animación 'flotar' */
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+
+    /* Sube y rota un poco */
+}
+
+/* 
+   --------------------------------------------------------------------------
+   7. COMPONENTES DE LA TARJETA
+   --------------------------------------------------------------------------
+*/
+
+/* Contenedor de Logos */
+.contenedor-logo {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 50%;
+    /* Círculo perfecto */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.imagen-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ajusta la imagen sin cortarla */
+    border-radius: 50%;
+}
+
+/* Ajustes específicos para mejorar la visualización de ciertos logos */
+.imagen-logo[src*="beltran.jpg"] {
+    object-position: center;
+    filter: contrast(1.1) brightness(1.05);
+}
+
+.imagen-logo[src*="logo-header-uom.png"] {
+    object-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Foto de Perfil */
+.contenedor-foto-perfil {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 5px;
+    /* Gradiente usando las variables de color */
+    background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    /* Centrado horizontal */
+    position: relative;
+    z-index: 10;
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Cubre todo el círculo, recorta si es necesario */
+    border: 4px solid white;
+    background-color: #eee;
+}
+
+/* Etiqueta de Rol (Ej: DESARROLLADOR) */
+.insignia-rol {
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: -15px;
+    /* Sube para superponerse a la foto */
+    position: relative;
+    z-index: 11;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pie de la tarjeta */
+.pie-tarjeta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background: #f9f9f9;
+    text-align: center;
+    border-top: 1px solid #eee;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8px;
+}
+
+/* Tira de color inferior */
+.tira-inferior {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--primary);
+    z-index: 20;
+}
+
+/* Marco para los códigos QR */
+.marco-qr {
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow:
+        0 0 0 2px var(--primary),
+        0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.marco-qr:hover {
+    transform: scale(1.05);
+    /* Crece un poco al pasar el mouse */
+}
+
+/* Esquinas decorativas del QR */
+.esquina-qr {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: var(--primary);
+    border-style: solid;
+}
+
+/* 
+   --------------------------------------------------------------------------
+   8. ESTILOS DE IMPRESIÓN (@media print)
+   --------------------------------------------------------------------------
+   Estos estilos se aplican SOLO cuando se imprime la página (Ctrl+P).
+*/
+@media print {
+    body {
+        background: none;
+        height: auto;
+        overflow: visible;
+        display: block;
+        padding: 20px;
+    }
+
+    /* Ocultamos instrucciones y botones que no deben salir en papel */
+    .texto-instruccion,
+    .boton-imprimir,
+    .boton-aprendizaje,
+    .boton-girar,
+    .panel-lateral {
+        display: none !important;
+    }
+
+    /* Desarmamos el efecto 3D para mostrar ambas caras */
+    .contenedor-tarjeta {
+        transform: none !important;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        /* Ponemos frente y dorso lado a lado */
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        perspective: none;
+    }
+
+    .cara-tarjeta,
+    .dorso-tarjeta {
+        position: relative;
+        /* Ya no absoluto */
+        transform: none !important;
+        /* Quitamos rotación */
+        width: var(--ancho-tarjeta);
+        height: var(--alto-tarjeta);
+        box-shadow: none;
+        border: 1px solid #ccc;
+        /* Borde simple para recortar */
+        backface-visibility: visible;
+        flex-shrink: 0;
+        /* Evitamos que se achiquen */
+    }
+
+    /* Simplificamos sombras para impresión */
+    .contenedor-foto-perfil,
+    .insignia-rol,
+    .contenedor-logo {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* 
+   ==========================================================================
+   9. MODO APRENDIZAJE (Estilos Interactivos)
+   ==========================================================================
+*/
+
+/* Botón flotante */
+.boton-aprendizaje {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.boton-aprendizaje:hover,
+.boton-aprendizaje.activo {
+    background: var(--primary);
+    color: white;
+}
+
+/* Botón para girar (solo visible en modo aprendizaje) */
+.boton-girar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.boton-girar:hover {
+    background: black;
+    transform: scale(1.05);
+}
+
+body.modo-aprendizaje-activo .boton-girar {
+    display: block;
+    /* Visible en modo aprendizaje */
+}
+
+/* 
+   HOTSPOTS (Puntos Interactivos)
+   --------------------------------------------------------------------------
+*/
+.punto-interactivo {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.3);
+    animation: pulso 2s infinite;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Icono dentro del punto */
+.punto-interactivo i {
+    pointer-events: none;
+}
+
+@keyframes pulso {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 140, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
+    }
+}
+
+/* Mostrar puntos cuando el modo está activo */
+body.modo-aprendizaje-activo .punto-interactivo {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 
+   PANEL LATERAL DE INFORMACIÓN
+   --------------------------------------------------------------------------
+   Este panel reemplaza a los tooltips flotantes.
+   Aparece a la derecha de la pantalla.
+*/
+.panel-lateral {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%) translateX(120%);
+    /* Oculto a la derecha */
+    width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    z-index: 900;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+/* Mostrar panel cuando tiene la clase activa */
+.panel-lateral.visible {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+}
+
+/* Título del panel */
+.panel-titulo {
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+/* Descripción */
+.panel-descripcion {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Bloque de código */
+.panel-codigo {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8rem;
+    display: block;
+    overflow-x: auto;
+    border-left: 4px solid var(--primary);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Resalte de elementos afectados */
+body.modo-aprendizaje-activo .contenedor-tarjeta {
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
