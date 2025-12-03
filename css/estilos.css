@@ -564,201 +564,6 @@ body.modo-aprendizaje-activo .punto-interactivo {
     display: block;
     overflow-x: auto;
     border-left: 4px solid var(--primary);
-    .cara-tarjeta,
-    .dorso-tarjeta {
-        position: relative;
-        /* Ya no absoluto */
-        transform: none !important;
-        /* Quitamos rotaciÃ³n */
-        width: var(--ancho-tarjeta);
-        height: var(--alto-tarjeta);
-        box-shadow: none;
-        border: 1px solid #ccc;
-        /* Borde simple para recortar */
-        backface-visibility: visible;
-        flex-shrink: 0;
-        /* Evitamos que se achiquen */
-    }
-
-    /* Simplificamos sombras para impresiÃ³n */
-    .contenedor-foto-perfil,
-    .insignia-rol,
-    .contenedor-logo {
-        box-shadow: none;
-        border: 1px solid #ddd;
-    }
-}
-
-/* 
-   ==========================================================================
-   9. MODO APRENDIZAJE (Estilos Interactivos)
-   ==========================================================================
-*/
-
-/* BotÃ³n flotante */
-.boton-aprendizaje {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-}
-
-.boton-aprendizaje:hover,
-.boton-aprendizaje.activo {
-    background: var(--primary);
-    color: white;
-}
-
-/* BotÃ³n para girar (solo visible en modo aprendizaje) */
-.boton-girar {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    font-size: 0.9rem;
-    display: none;
-    /* Oculto por defecto */
-}
-
-.boton-girar:hover {
-    background: black;
-    transform: scale(1.05);
-}
-
-body.modo-aprendizaje-activo .boton-girar {
-    display: block;
-    /* Visible en modo aprendizaje */
-}
-
-/* 
-   HOTSPOTS (Puntos Interactivos)
-   --------------------------------------------------------------------------
-*/
-.punto-interactivo {
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    background: var(--primary);
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 12px;
-    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.3);
-    animation: pulso 2s infinite;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Icono dentro del punto */
-.punto-interactivo i {
-    pointer-events: none;
-}
-
-@keyframes pulso {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 140, 0, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0);
-    }
-}
-
-/* Mostrar puntos cuando el modo estÃ¡ activo */
-body.modo-aprendizaje-activo .punto-interactivo {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* 
-   PANEL LATERAL DE INFORMACIÃ“N
-   --------------------------------------------------------------------------
-   Este panel reemplaza a los tooltips flotantes.
-   Aparece a la derecha de la pantalla.
-*/
-.panel-lateral {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%) translateX(120%);
-    /* Oculto a la derecha */
-    width: 300px;
-    background: white;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(0, 0, 0, 0.05);
-    z-index: 900;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    opacity: 0;
-}
-
-/* Mostrar panel cuando tiene la clase activa */
-.panel-lateral.visible {
-    transform: translateY(-50%) translateX(0);
-    opacity: 1;
-}
-
-/* TÃ­tulo del panel */
-.panel-titulo {
-    color: var(--primary);
-    font-weight: 900;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    display: block;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 5px;
-}
-
-/* DescripciÃ³n */
-.panel-descripcion {
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* Bloque de cÃ³digo */
-.panel-codigo {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 15px;
-    border-radius: 10px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.8rem;
-    display: block;
-    overflow-x: auto;
-    border-left: 4px solid var(--primary);
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -802,14 +607,15 @@ body.modo-aprendizaje-activo .contenedor-tarjeta {
     position: fixed;
     top: 50%;
     left: 20px;
-    transform: translateY(-50%) translateX(-120%); /* Oculto a la izquierda */
+    transform: translateY(-50%) translateX(-120%);
+    /* Oculto a la izquierda */
     width: 300px;
     background: white;
     border-radius: 20px;
     padding: 25px;
-    box-shadow: 
-        0 20px 50px rgba(0,0,0,0.1),
-        0 0 0 1px rgba(0,0,0,0.05);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
     z-index: 900;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
@@ -851,9 +657,9 @@ body.modo-aprendizaje-activo .contenedor-tarjeta {
 
 /* Ocultar en impresión */
 @media print {
+
     .boton-editor,
     .panel-editor {
         display: none !important;
     }
 }
-

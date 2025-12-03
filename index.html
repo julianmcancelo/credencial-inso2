@@ -37,8 +37,23 @@
 </head>
 
 <body>
-    funciona el código.</span>
-    <code id="info-codigo" class="panel-codigo">// El código aparecerá aquí</code>
+
+    <!-- BOTÓN MODO APRENDIZAJE -->
+    <button id="btn-aprendizaje" class="boton-aprendizaje">
+        <i class="fas fa-graduation-cap"></i> Activar Modo Aprendizaje
+    </button>
+
+    <!-- BOTÓN GIRAR (Solo Modo Aprendizaje) -->
+    <button id="btn-girar" class="boton-girar">
+        <i class="fas fa-sync-alt"></i> Girar Tarjeta
+    </button>
+
+    <!-- PANEL LATERAL DE INFORMACIÓN (Nuevo) -->
+    <div id="panel-info" class="panel-lateral">
+        <span id="info-titulo" class="panel-titulo">Selecciona un punto</span>
+        <span id="info-descripcion" class="panel-descripcion">Pasa el mouse sobre los puntos naranjas para ver cómo
+            funciona el código.</span>
+        <code id="info-codigo" class="panel-codigo">// El código aparecerá aquí</code>
     </div>
 
     <!-- 
@@ -148,121 +163,139 @@ align-items: center;">
                         data-descripcion="Al poner el radio al 50%, un elemento cuadrado se convierte visualmente en un círculo perfecto."
                         data-codigo="border-radius: 50%;
 width: 130px; 
-            <div class=" pie-tarjeta">
-                        <h3 class="text-primary font-black text-lg leading-none tracking-tight">CARTITA<br>DIGITAL</h3>
-                        <!-- Línea decorativa pequeña -->
-                        <div class="h-0.5 w-10 bg-primary/30 mx-auto my-2 rounded-full"></div>
-                        <p class="text-[9px] text-gray-500 font-bold uppercase">Ingeniería de Software II</p>
+height: 130px;">
+                        <i class="fas fa-circle-notch"></i>
                     </div>
-
-                    <!-- Tira de color inferior -->
-                    <div class="tira-inferior"></div>
+                    <img src="assets/img/Sin título2.png" alt="Profile" class="foto-perfil">
                 </div>
 
+                <!-- Badge de Rol (ej: Desarrollador) -->
+                <div class="insignia-rol">DESARROLLADOR</div>
 
-                <!-- 
+                <!-- Nombre -->
+                <h2 class="text-gray-800 text-2xl font-black mt-6 uppercase tracking-wide">
+                    Julian<br>Cancelo
+                </h2>
+                <!-- ID de Empleado -->
+                <p class="text-gray-500 text-xs font-semibold tracking-widest mt-1">ID: DEV-2025-001</p>
+            </div>
+
+            <!-- 
+                FOOTER DEL FRENTE
+                Parte inferior de la cara frontal.
+            -->
+            <div class="pie-tarjeta">
+                <h3 class="text-primary font-black text-lg leading-none tracking-tight">CARTITA<br>DIGITAL</h3>
+                <!-- Línea decorativa pequeña -->
+                <div class="h-0.5 w-10 bg-primary/30 mx-auto my-2 rounded-full"></div>
+                <p class="text-[9px] text-gray-500 font-bold uppercase">Ingeniería de Software II</p>
+            </div>
+
+            <!-- Tira de color inferior -->
+            <div class="tira-inferior"></div>
+        </div>
+
+
+        <!-- 
             ====================================================================
             DORSO DE LA TARJETA (.dorso-tarjeta)
             ====================================================================
             Esta cara está rotada 180 grados por defecto.
         -->
-                <div class="dorso-tarjeta">
-                    <div class="agujero-cinta"></div>
+        <div class="dorso-tarjeta">
+            <div class="agujero-cinta"></div>
 
-                    <!-- Marca de agua de fondo (STAFF) -->
-                    <div class="absolute opacity-[0.04] text-9xl text-black font-black transform -rotate-45 pointer-events-none"
-                        style="top: 150px; left: -20px;">
-                        STAFF
-                    </div>
+            <!-- Marca de agua de fondo (STAFF) -->
+            <div class="absolute opacity-[0.04] text-9xl text-black font-black transform -rotate-45 pointer-events-none"
+                style="top: 150px; left: -20px;">
+                STAFF
+            </div>
 
-                    <!-- Contenedor de contenido del dorso -->
-                    <div class="relative z-10 w-full px-6 flex flex-col items-center h-full">
+            <!-- Contenedor de contenido del dorso -->
+            <div class="relative z-10 w-full px-6 flex flex-col items-center h-full">
 
-                        <!-- Título de Acceso -->
-                        <div class="mt-12 mb-8 text-center">
-                            <h3 class="text-primary font-bold text-sm tracking-[0.2em] border-b border-primary/20 pb-2">
-                                ACCESO
-                                AUTORIZADO</h3>
-                        </div>
+                <!-- Título de Acceso -->
+                <div class="mt-12 mb-8 text-center">
+                    <h3 class="text-primary font-bold text-sm tracking-[0.2em] border-b border-primary/20 pb-2">ACCESO
+                        AUTORIZADO</h3>
+                </div>
 
-                        <!-- 
+                <!-- 
                     SECCIÓN DE CÓDIGOS QR
                     Dos columnas para mostrar diferentes QRs.
                 -->
-                        <div class="flex justify-center gap-4 mb-6 w-full">
+                <div class="flex justify-center gap-4 mb-6 w-full">
 
-                            <!-- QR 1: SISTEMA -->
-                            <div class="flex flex-col items-center">
-                                <div class="marco-qr mb-2">
-                                    <!-- Esquinas decorativas del QR -->
-                                    <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"></div>
-                                    <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"></div>
-                                    <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"></div>
-                                    <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg">
-                                    </div>
+                    <!-- QR 1: SISTEMA -->
+                    <div class="flex flex-col items-center">
+                        <div class="marco-qr mb-2">
+                            <!-- Esquinas decorativas del QR -->
+                            <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"></div>
+                            <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"></div>
+                            <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"></div>
+                            <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"></div>
 
-                                    <!-- Generador de QR dinámico (API externa) -->
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://icbeltran.com.ar&color=ff8c00"
-                                        alt="QR Sistema" class="w-20 h-20">
-                                </div>
-                                <span class="text-[9px] font-bold text-primary tracking-widest">SISTEMA</span>
-                            </div>
-
-                            <!-- QR 2: DOCS -->
-                            <div class="flex flex-col items-center">
-                                <div class="marco-qr mb-2"
-                                    style="box-shadow: 0 0 0 2px #555, 0 4px 10px rgba(0,0,0,0.08);">
-                                    <!-- Esquinas decorativas (color gris) -->
-                                    <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"
-                                        style="border-color: #555;"></div>
-                                    <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"
-                                        style="border-color: #555;"></div>
-                                    <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"
-                                        style="border-color: #555;"></div>
-                                    <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"
-                                        style="border-color: #555;"></div>
-
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ibeltran.com.ar/&color=333333"
-                                        alt="QR Docs" class="w-20 h-20">
-                                </div>
-                                <span class="text-[9px] font-bold text-gray-600 tracking-widest">DOCS</span>
-                            </div>
+                            <!-- Generador de QR dinámico (API externa) -->
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://icbeltran.com.ar&color=ff8c00"
+                                alt="QR Sistema" class="w-20 h-20">
                         </div>
-
-                        <!-- Aviso legal -->
-                        <p class="text-gray-500 text-[10px] text-center max-w-[200px] leading-relaxed italic">
-                            "Esta credencial es personal e intransferible."
-                        </p>
-
+                        <span class="text-[9px] font-bold text-primary tracking-widest">SISTEMA</span>
                     </div>
 
-                    <!-- Footer Dorso (Fecha de validez) -->
-                    <div class="pie-tarjeta">
-                        <div class="flex flex-col items-center justify-center h-full">
-                            <p class="text-primary text-[8px] font-bold mb-1">VÁLIDO HASTA</p>
-                            <p class="text-gray-800 font-mono text-lg tracking-widest font-bold">DIC 2026</p>
-                            <p class="text-[8px] text-gray-400 font-mono mt-1">v1.1</p>
-                        </div>
-                    </div>
+                    <!-- QR 2: DOCS -->
+                    <div class="flex flex-col items-center">
+                        <div class="marco-qr mb-2" style="box-shadow: 0 0 0 2px #555, 0 4px 10px rgba(0,0,0,0.08);">
+                            <!-- Esquinas decorativas (color gris) -->
+                            <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"
+                                style="border-color: #555;"></div>
+                            <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"
+                                style="border-color: #555;"></div>
+                            <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"
+                                style="border-color: #555;"></div>
+                            <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"
+                                style="border-color: #555;"></div>
 
-                    <!-- Tira de color inferior -->
-                    <div class="tira-inferior"></div>
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ibeltran.com.ar/&color=333333"
+                                alt="QR Docs" class="w-20 h-20">
+                        </div>
+                        <span class="text-[9px] font-bold text-gray-600 tracking-widest">DOCS</span>
+                    </div>
                 </div>
+
+                <!-- Aviso legal -->
+                <p class="text-gray-500 text-[10px] text-center max-w-[200px] leading-relaxed italic">
+                    "Esta credencial es personal e intransferible."
+                </p>
 
             </div>
 
-            <!-- 
+            <!-- Footer Dorso (Fecha de validez) -->
+            <div class="pie-tarjeta">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <p class="text-primary text-[8px] font-bold mb-1">VÁLIDO HASTA</p>
+                    <p class="text-gray-800 font-mono text-lg tracking-widest font-bold">DIC 2026</p>
+                    <p class="text-[8px] text-gray-400 font-mono mt-1">v1.1</p>
+                </div>
+            </div>
+
+            <!-- Tira de color inferior -->
+            <div class="tira-inferior"></div>
+        </div>
+
+    </div>
+
+    <!-- 
         BOTÓN DE IMPRIMIR
         Llama a la función window.print() del navegador.
         Se oculta automáticamente al imprimir gracias a @media print en CSS.
     -->
-            <button onclick="window.print()"
-                class="boton-imprimir mt-8 bg-gray-800 hover:bg-black text-white px-6 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-sm font-semibold tracking-wide">
-                <i class="fas fa-print"></i> IMPRIMIR CREDENCIAL
-            </button>
+    <button onclick="window.print()"
+        class="boton-imprimir mt-8 bg-gray-800 hover:bg-black text-white px-6 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-sm font-semibold tracking-wide">
+        <i class="fas fa-print"></i> IMPRIMIR CREDENCIAL
+    </button>
 
-            <!-- SCRIPT PARA EL MODO APRENDIZAJE -->
-            <script src="js/logica.js"></script>
+    <!-- SCRIPT PARA EL MODO APRENDIZAJE -->
+    <script src="js/logica.js"></script>
 
 </body>
 
