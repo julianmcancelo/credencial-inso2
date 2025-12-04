@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- 
+<!|TYPE html>
+    <html lang="es">
+    <!-- 
     ============================================================================
     PROYECTO: CREDENCIAL DIGITAL EDUCATIVA
     ============================================================================
@@ -8,55 +8,55 @@
     Se utilizan etiquetas semánticas y clases de utilidad (Tailwind CSS).
 -->
 
-<head>
-    <meta charset="UTF-8">
-    <!-- Viewport para asegurar que se vea bien en móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credencial Staff</title>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Viewport para asegurar que se vea bien en móviles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Credencial Staff</title>
 
-    <!-- 
+        <!-- 
         FUENTES DE GOOGLE:
         Importamos 'Montserrat' y 'Outfit' para la tipografía.
     -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Outfit:wght@300;400;600&display=swap"
-        rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Outfit:wght@300;400;600&display=swap"
+            rel="stylesheet">
 
-    <!-- 
+        <!-- 
         TAILWIND CSS:
         Framework de utilidades para estilos rápidos (márgenes, colores, flexbox).
         Nota: En producción se recomienda compilar, aquí usamos CDN para simplicidad.
     -->
-    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- ICONOS: FontAwesome para iconos como la impresora o el mouse -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- ICONOS: FontAwesome para iconos como la impresora o el mouse -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- NUESTROS ESTILOS PERSONALIZADOS (Ahora en español) -->
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
+        <!-- NUESTROS ESTILOS PERSONALIZADOS (Ahora en español) -->
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
 
-<body>
+    <body>
 
-    <!-- BOTÓN MODO APRENDIZAJE -->
-    <button id="btn-aprendizaje" class="boton-aprendizaje">
-        <i class="fas fa-graduation-cap"></i> Activar Modo Aprendizaje
-    </button>
+        <!-- BOTÓN MODO APRENDIZAJE -->
+        <button id="btn-aprendizaje" class="boton-aprendizaje">
+            <i class="fas fa-graduation-cap"></i> Activar Modo Aprendizaje
+        </button>
 
-    <!-- BOTÓN GIRAR (Solo Modo Aprendizaje) -->
-    <button id="btn-girar" class="boton-girar">
-        <i class="fas fa-sync-alt"></i> Girar Tarjeta
-    </button>
+        <!-- BOTÓN GIRAR (Solo Modo Aprendizaje) -->
+        <button id="btn-girar" class="boton-girar">
+            <i class="fas fa-sync-alt"></i> Girar Tarjeta
+        </button>
 
-    <!-- PANEL LATERAL DE INFORMACIÓN (Nuevo) -->
-    <div id="panel-info" class="panel-lateral">
-        <span id="info-titulo" class="panel-titulo">Selecciona un punto</span>
-        <span id="info-descripcion" class="panel-descripcion">Pasa el mouse sobre los puntos naranjas para ver cómo
-            funciona el código.</span>
-        <code id="info-codigo" class="panel-codigo">// El código aparecerá aquí</code>
-    </div>
+        <!-- PANEL LATERAL DE INFORMACIÓN (Nuevo) -->
+        <div id="panel-info" class="panel-lateral">
+            <span id="info-titulo" class="panel-titulo">Selecciona un punto</span>
+            <span id="info-descripcion" class="panel-descripcion">Pasa el mouse sobre los puntos naranjas para ver cómo
+                funciona el código.</span>
+            <code id="info-codigo" class="panel-codigo">// El código aparecerá aquí</code>
+        </div>
 
-    <!-- 
+        <!-- 
         INSTRUCCIÓN VISUAL
         Texto pequeño que indica al usuario qué hacer.
         Clases Tailwind:
@@ -65,238 +65,240 @@
         - mb-6: margen inferior (margin-bottom)
         - opacity-70: transparencia
     -->
-    <div class="texto-instruccion text-gray-500 text-center mb-6 opacity-70 text-sm font-light">
-        <i class="fas fa-mouse-pointer mr-2"></i> Pasa el mouse para girar
-    </div>
+        <div class="texto-instruccion text-gray-500 text-center mb-6 opacity-70 text-sm font-light">
+            <i class="fas fa-mouse-pointer mr-2"></i> Pasa el mouse para girar
+        </div>
 
-    <!-- 
+        <!-- 
         CONTENEDOR PRINCIPAL DE LA TARJETA
         Este div contiene tanto el frente como el dorso.
         La clase 'contenedor-tarjeta' maneja el efecto 3D en estilos.css.
     -->
-    <div class="contenedor-tarjeta">
+        <div class="contenedor-tarjeta">
 
-        <!-- 
+            <!-- 
             ====================================================================
             FRENTE DE LA TARJETA (.cara-tarjeta)
             ====================================================================
         -->
-        <div class="cara-tarjeta">
-            <!-- PUNTOS DE APRENDIZAJE (FRENTE) -->
+            <div class="cara-tarjeta">
+                <!-- PUNTOS DE APRENDIZAJE (FRENTE) -->
 
-            <!-- Punto 1: Posicionamiento -->
-            <div class="punto-interactivo" style="top: 20px; left: 20px;" data-titulo="Posicionamiento Absoluto"
-                data-descripcion="Permite colocar elementos en cualquier lugar exacto dentro de la tarjeta, ignorando el flujo normal."
-                data-codigo="position: absolute;
+                <!-- Punto 1: Posicionamiento -->
+                <div class="punto-interactivo" style="top: 20px; left: 20px;" data-titulo="Posicionamiento Absoluto"
+                    data-descripcion="Permite colocar elementos en cualquier lugar exacto dentro de la tarjeta, ignorando el flujo normal."
+                    data-codigo="position: absolute;
 top: 0; 
 left: 0;">
-                <i class="fas fa-info"></i>
-            </div>
+                    <i class="fas fa-info"></i>
+                </div>
 
-            <!-- Punto 2: Capas (Z-Index) -->
-            <div class="punto-interactivo" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"
-                data-titulo="Control de Capas (Z-Index)"
-                data-descripcion="Decide qué elementos van encima de otros. Un número mayor significa que el elemento está más 'cerca' del usuario."
-                data-codigo="z-index: 10;">
-                <i class="fas fa-layer-group"></i>
-            </div>
+                <!-- Punto 2: Capas (Z-Index) -->
+                <div class="punto-interactivo" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"
+                    data-titulo="Control de Capas (Z-Index)"
+                    data-descripcion="Decide qué elementos van encima de otros. Un número mayor significa que el elemento está más 'cerca' del usuario."
+                    data-codigo="z-index: 10;">
+                    <i class="fas fa-layer-group"></i>
+                </div>
 
-            <!-- Fondo decorativo -->
-            <div class="patron-fondo"></div>
-            <!-- Agujero para la cinta -->
-            <div class="agujero-cinta"></div>
+                <!-- Fondo decorativo -->
+                <div class="patron-fondo"></div>
+                <!-- Agujero para la cinta -->
+                <div class="agujero-cinta"></div>
 
-            <!-- 
+                <!-- 
                 ELEMENTOS FLOTANTES (DECORACIÓN)
                 Imágenes de comida con animación de flotación.
                 style="..." se usa para posiciones específicas de cada elemento.
             -->
-            <img src="assets/img/hamburguesa.png" class="imagen-flotante" style="top: 12%; left: 8%;">
-            <img src="assets/img/pizza.png" class="imagen-flotante"
-                style="bottom: 25%; right: 10%; animation-delay: 1s; width: 70px;">
-            <img src="assets/img/sushi.png" class="imagen-flotante" style="top: 45%; right: 5%; animation-delay: 1.5s;">
-            <img src="assets/img/papafritas.png" class="imagen-flotante"
-                style="top: 55%; left: -2%; animation-delay: 2s; width: 50px;">
+                <img src="assets/img/hamburguesa.png" class="imagen-flotante" style="top: 12%; left: 8%;">
+                <img src="assets/img/pizza.png" class="imagen-flotante"
+                    style="bottom: 25%; right: 10%; animation-delay: 1s; width: 70px;">
+                <img src="assets/img/sushi.png" class="imagen-flotante"
+                    style="top: 45%; right: 5%; animation-delay: 1.5s;">
+                <img src="assets/img/papafritas.png" class="imagen-flotante"
+                    style="top: 55%; left: -2%; animation-delay: 2s; width: 50px;">
 
-            <!-- 
+                <!-- 
                 ENCABEZADO (HEADER)
                 Flexbox para alinear logos y texto.
                 - justify-between: separa los elementos a los extremos.
                 - items-center: alinea verticalmente al centro.
             -->
-            <div class="relative z-10 flex justify-between items-center px-6 mt-10">
-                <!-- Punto 3: Flexbox -->
-                <div class="punto-interactivo" style="top: -10px; left: 50%; transform: translateX(-50%);"
-                    data-titulo="Flexbox: Separación"
-                    data-descripcion="Distribuye el espacio automáticamente entre los logos y el texto para que queden en los extremos."
-                    data-codigo="display: flex;
+                <div class="relative z-10 flex justify-between items-center px-6 mt-10">
+                    <!-- Punto 3: Flexbox -->
+                    <div class="punto-interactivo" style="top: -10px; left: 50%; transform: translateX(-50%);"
+                        data-titulo="Flexbox: Separación"
+                        data-descripcion="Distribuye el espacio automáticamente entre los logos y el texto para que queden en los extremos."
+                        data-codigo="display: flex;
 justify-content: space-between;
 align-items: center;">
-                    <i class="fas fa-columns"></i>
-                </div>
-                <!-- Logo Izquierda -->
-                <div class="contenedor-logo">
-                    <img src="assets/img/logo-header-uom.png" alt="UOM" class="imagen-logo">
-                </div>
+                        <i class="fas fa-columns"></i>
+                    </div>
+                    <!-- Logo Izquierda -->
+                    <div class="contenedor-logo">
+                        <img src="assets/img/logo-header-uom.png" alt="UOM" class="imagen-logo">
+                    </div>
 
-                <!-- Texto Central -->
-                <div class="text-right text-gray-700">
-                    <div class="text-[10px] font-bold opacity-80 leading-tight">INSTITUTO<br>TECNOLÓGICO<br>BELTRÁN
+                    <!-- Texto Central -->
+                    <div class="text-right text-gray-700">
+                        <div class="text-[10px] font-bold opacity-80 leading-tight">INSTITUTO<br>TECNOLÓGICO<br>BELTRÁN
+                        </div>
+                    </div>
+
+                    <!-- Logo Derecha -->
+                    <div class="contenedor-logo">
+                        <img src="assets/img/beltran.jpg" alt="CTI" class="imagen-logo">
                     </div>
                 </div>
 
-                <!-- Logo Derecha -->
-                <div class="contenedor-logo">
-                    <img src="assets/img/beltran.jpg" alt="CTI" class="imagen-logo">
-                </div>
-            </div>
-
-            <!-- 
+                <!-- 
                 PERFIL DEL USUARIO
                 Contiene la foto, el rol y el nombre.
             -->
-            <div class="relative z-10 text-center mt-8">
-                <!-- Foto de Perfil -->
-                <div class="contenedor-foto-perfil">
-                    <!-- Punto 4: Bordes Redondeados -->
-                    <div class="punto-interactivo" style="top: 0; right: -20px;" data-titulo="Bordes Redondeados"
-                        data-descripcion="Al poner el radio al 50%, un elemento cuadrado se convierte visualmente en un círculo perfecto."
-                        data-codigo="border-radius: 50%;
+                <div class="relative z-10 text-center mt-8">
+                    <!-- Foto de Perfil -->
+                    <div class="contenedor-foto-perfil">
+                        <!-- Punto 4: Bordes Redondeados -->
+                        <div class="punto-interactivo" style="top: 0; right: -20px;" data-titulo="Bordes Redondeados"
+                            data-descripcion="Al poner el radio al 50%, un elemento cuadrado se convierte visualmente en un círculo perfecto."
+                            data-codigo="border-radius: 50%;
 width: 130px; 
 height: 130px;">
-                        <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-circle-notch"></i>
+                        </div>
+                        <img src="assets/img/Sin título2.png" alt="Profile" class="foto-perfil">
                     </div>
-                    <img src="assets/img/Sin título2.png" alt="Profile" class="foto-perfil">
+
+                    <!-- Badge de Rol (ej: Desarrollador) -->
+                    <div class="insignia-rol">DESARROLLADOR</div>
+
+                    <!-- Nombre -->
+                    <h2 class="text-gray-800 text-2xl font-black mt-6 uppercase tracking-wide">
+                        Julian<br>Cancelo
+                    </h2>
+                    <!-- ID de Empleado -->
+                    <p class="text-gray-500 text-xs font-semibold tracking-widest mt-1">ID: DEV-2025-001</p>
                 </div>
 
-                <!-- Badge de Rol (ej: Desarrollador) -->
-                <div class="insignia-rol">DESARROLLADOR</div>
-
-                <!-- Nombre -->
-                <h2 class="text-gray-800 text-2xl font-black mt-6 uppercase tracking-wide">
-                    Julian<br>Cancelo
-                </h2>
-                <!-- ID de Empleado -->
-                <p class="text-gray-500 text-xs font-semibold tracking-widest mt-1">ID: DEV-2025-001</p>
-            </div>
-
-            <!-- 
+                <!-- 
                 FOOTER DEL FRENTE
                 Parte inferior de la cara frontal.
             -->
-            <div class="pie-tarjeta">
-                <h3 class="text-primary font-black text-lg leading-none tracking-tight">CARTITA<br>DIGITAL</h3>
-                <!-- Línea decorativa pequeña -->
-                <div class="h-0.5 w-10 bg-primary/30 mx-auto my-2 rounded-full"></div>
-                <p class="text-[9px] text-gray-500 font-bold uppercase">Ingeniería de Software II</p>
+                <div class="pie-tarjeta">
+                    <h3 class="text-primary font-black text-lg leading-none tracking-tight">CARTITA<br>DIGITAL</h3>
+                    <!-- Línea decorativa pequeña -->
+                    <div class="h-0.5 w-10 bg-primary/30 mx-auto my-2 rounded-full"></div>
+                    <p class="text-[9px] text-gray-500 font-bold uppercase">Ingeniería de Software II</p>
+                </div>
+
+                <!-- Tira de color inferior -->
+                <div class="tira-inferior"></div>
             </div>
 
-            <!-- Tira de color inferior -->
-            <div class="tira-inferior"></div>
-        </div>
 
-
-        <!-- 
+            <!-- 
             ====================================================================
             DORSO DE LA TARJETA (.dorso-tarjeta)
             ====================================================================
             Esta cara está rotada 180 grados por defecto.
         -->
-        <div class="dorso-tarjeta">
-            <div class="agujero-cinta"></div>
+            <div class="dorso-tarjeta">
+                <div class="agujero-cinta"></div>
 
-            <!-- Marca de agua de fondo (STAFF) -->
-            <div class="absolute opacity-[0.04] text-9xl text-black font-black transform -rotate-45 pointer-events-none"
-                style="top: 150px; left: -20px;">
-                STAFF
-            </div>
-
-            <!-- Contenedor de contenido del dorso -->
-            <div class="relative z-10 w-full px-6 flex flex-col items-center h-full">
-
-                <!-- Título de Acceso -->
-                <div class="mt-12 mb-8 text-center">
-                    <h3 class="text-primary font-bold text-sm tracking-[0.2em] border-b border-primary/20 pb-2">ACCESO
-                        AUTORIZADO</h3>
+                <!-- Marca de agua de fondo (STAFF) -->
+                <div class="absolute opacity-[0.04] text-9xl text-black font-black transform -rotate-45 pointer-events-none"
+                    style="top: 150px; left: -20px;">
+                    STAFF
                 </div>
 
-                <!-- 
+                <!-- Contenedor de contenido del dorso -->
+                <div class="relative z-10 w-full px-6 flex flex-col items-center h-full">
+
+                    <!-- Título de Acceso -->
+                    <div class="mt-12 mb-8 text-center">
+                        <h3 class="text-primary font-bold text-sm tracking-[0.2em] border-b border-primary/20 pb-2">
+                            ACCESO
+                            AUTORIZADO</h3>
+                    </div>
+
+                    <!-- 
                     SECCIÓN DE CÓDIGOS QR
                     Dos columnas para mostrar diferentes QRs.
                 -->
-                <div class="flex justify-center gap-4 mb-6 w-full">
+                    <div class="flex justify-center gap-4 mb-6 w-full">
 
-                    <!-- QR 1: SISTEMA -->
-                    <div class="flex flex-col items-center">
-                        <div class="marco-qr mb-2">
-                            <!-- Esquinas decorativas del QR -->
-                            <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"></div>
-                            <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"></div>
-                            <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"></div>
-                            <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"></div>
+                        <!-- QR 1: SISTEMA -->
+                        <div class="flex flex-col items-center">
+                            <div class="marco-qr mb-2">
+                                <!-- Esquinas decorativas del QR -->
+                                <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"></div>
+                                <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"></div>
+                                <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"></div>
+                                <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"></div>
 
-                            <!-- Generador de QR dinámico (API externa) -->
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://icbeltran.com.ar&color=ff8c00"
-                                alt="QR Sistema" class="w-20 h-20">
+                                <!-- Generador de QR dinámico (API externa) -->
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ibeltran.com.ar&color=ff8c00"
+                                    alt="QR Sistema" class="w-20 h-20">
+                            </div>
+                            <span class="text-[9px] font-bold text-primary tracking-widest">SISTEMA</span>
                         </div>
-                        <span class="text-[9px] font-bold text-primary tracking-widest">SISTEMA</span>
+
+                        <!-- QR 2: DOCS -->
+                        <div class="flex flex-col items-center">
+                            <div class="marco-qr mb-2" style="box-shadow: 0 0 0 2px #555, 0 4px 10px rgba(0,0,0,0.08);">
+                                <!-- Esquinas decorativas (color gris) -->
+                                <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"
+                                    style="border-color: #555;"></div>
+                                <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"
+                                    style="border-color: #555;"></div>
+                                <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"
+                                    style="border-color: #555;"></div>
+                                <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"
+                                    style="border-color: #555;"></div>
+
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/juliancancelo/&color=333333"
+                                    alt="QR Docs" class="w-20 h-20">
+                            </div>
+                            <span class="text-[9px] font-bold text-gray-600 tracking-widest">DOCS</span>
+                        </div>
                     </div>
 
-                    <!-- QR 2: DOCS -->
-                    <div class="flex flex-col items-center">
-                        <div class="marco-qr mb-2" style="box-shadow: 0 0 0 2px #555, 0 4px 10px rgba(0,0,0,0.08);">
-                            <!-- Esquinas decorativas (color gris) -->
-                            <div class="esquina-qr border-t-2 border-l-2 -top-1 -left-1 rounded-tl-lg"
-                                style="border-color: #555;"></div>
-                            <div class="esquina-qr border-t-2 border-r-2 -top-1 -right-1 rounded-tr-lg"
-                                style="border-color: #555;"></div>
-                            <div class="esquina-qr border-b-2 border-l-2 -bottom-1 -left-1 rounded-bl-lg"
-                                style="border-color: #555;"></div>
-                            <div class="esquina-qr border-b-2 border-r-2 -bottom-1 -right-1 rounded-br-lg"
-                                style="border-color: #555;"></div>
+                    <!-- Aviso legal -->
+                    <p class="text-gray-500 text-[10px] text-center max-w-[200px] leading-relaxed italic">
+                        "Esta credencial es personal e intransferible."
+                    </p>
 
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ibeltran.com.ar/&color=333333"
-                                alt="QR Docs" class="w-20 h-20">
-                        </div>
-                        <span class="text-[9px] font-bold text-gray-600 tracking-widest">DOCS</span>
+                </div>
+
+                <!-- Footer Dorso (Fecha de validez) -->
+                <div class="pie-tarjeta">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <p class="text-primary text-[8px] font-bold mb-1">VÁLIDO HASTA</p>
+                        <p class="text-gray-800 font-mono text-lg tracking-widest font-bold">DIC 2026</p>
+                        <p class="text-[8px] text-gray-400 font-mono mt-1">v1.1</p>
                     </div>
                 </div>
 
-                <!-- Aviso legal -->
-                <p class="text-gray-500 text-[10px] text-center max-w-[200px] leading-relaxed italic">
-                    "Esta credencial es personal e intransferible."
-                </p>
-
+                <!-- Tira de color inferior -->
+                <div class="tira-inferior"></div>
             </div>
 
-            <!-- Footer Dorso (Fecha de validez) -->
-            <div class="pie-tarjeta">
-                <div class="flex flex-col items-center justify-center h-full">
-                    <p class="text-primary text-[8px] font-bold mb-1">VÁLIDO HASTA</p>
-                    <p class="text-gray-800 font-mono text-lg tracking-widest font-bold">DIC 2026</p>
-                    <p class="text-[8px] text-gray-400 font-mono mt-1">v1.1</p>
-                </div>
-            </div>
-
-            <!-- Tira de color inferior -->
-            <div class="tira-inferior"></div>
         </div>
 
-    </div>
-
-    <!-- 
+        <!-- 
         BOTÓN DE IMPRIMIR
         Llama a la función window.print() del navegador.
         Se oculta automáticamente al imprimir gracias a @media print en CSS.
     -->
-    <button onclick="window.print()"
-        class="boton-imprimir mt-8 bg-gray-800 hover:bg-black text-white px-6 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-sm font-semibold tracking-wide">
-        <i class="fas fa-print"></i> IMPRIMIR CREDENCIAL
-    </button>
+        <button onclick="window.print()"
+            class="boton-imprimir mt-8 bg-gray-800 hover:bg-black text-white px-6 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-sm font-semibold tracking-wide">
+            <i class="fas fa-print"></i> IMPRIMIR CREDENCIAL
+        </button>
 
-    <!-- SCRIPT PARA EL MODO APRENDIZAJE -->
-    <script src="js/logica.js"></script>
+        <!-- SCRIPT PARA EL MODO APRENDIZAJE -->
+        <script src="js/logica.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
